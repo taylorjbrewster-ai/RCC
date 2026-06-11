@@ -68,6 +68,27 @@ form{max-width:480px;margin:0 auto;text-align:left}
 form label{display:block;font-size:.85rem;font-weight:700;margin:14px 0 4px;font-family:-apple-system,sans-serif}
 form input,form textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #3a4a5f;background:#243044;color:#fff;font-size:1rem;font-family:inherit}
 form button{margin-top:20px;width:100%}
+/* Calculator tools */
+.tool{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;margin-bottom:26px}
+.tool h2{margin-top:0!important}
+.tool .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.tool label{display:block;font-size:.84rem;font-weight:700;margin:12px 0 4px;font-family:-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink-soft)}
+.tool input[type=number]{width:100%;padding:11px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:1.05rem;font-family:-apple-system,sans-serif}
+.tool input[type=range]{width:100%;accent-color:var(--accent)}
+.tool .range-val{font-weight:800;color:var(--accent);font-family:-apple-system,sans-serif}
+.result{background:#eef7f3;border:1px solid #cde5db;border-radius:10px;padding:18px 20px;margin-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.result .label{font-family:-apple-system,sans-serif;font-weight:700;color:var(--ink-soft);font-size:.9rem}
+.result .num{font-family:-apple-system,sans-serif;font-weight:800;font-size:1.7rem;color:var(--accent-dark)}
+.result.total{background:var(--ink);border-color:var(--ink)}
+.result.total .label{color:#c3ccd9}
+.result.total .num{color:#5fd4ae;font-size:2.2rem}
+.note{font-size:.83rem;color:var(--ink-soft);margin-top:10px;font-family:-apple-system,sans-serif}
+/* Benchmark table */
+table.bench{width:100%;border-collapse:collapse;margin:18px 0 26px;font-size:.95rem}
+table.bench th{text-align:left;font-family:-apple-system,sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);border-bottom:2px solid var(--ink);padding:8px 10px}
+table.bench td{border-bottom:1px solid var(--line);padding:10px}
+table.bench td:last-child,table.bench th:last-child{text-align:right;white-space:nowrap}
+table.bench tr.hl td{background:#eef7f3;font-weight:700}
 /* Footer */
 footer{border-top:1px solid var(--line);padding:34px 0;color:var(--ink-soft);font-size:.88rem}
 .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;max-width:1080px;margin:0 auto;padding:0 24px}

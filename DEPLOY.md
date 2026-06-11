@@ -26,7 +26,7 @@ Live in ~1 minute at: **https://taylorjbrewster-ai.github.io/RCC/**
 
 1. **Google Search Console** — add `https://taylorjbrewster-ai.github.io/RCC/` as a URL-prefix property, verify, submit `sitemap.xml`.
 2. **Bing Webmaster Tools** — import from Search Console in one click.
-3. **Activate the contact form** — submit it once; FormSubmit emails taylor@town.club a one-time confirmation link.
+3. **Activate the contact form** — submit it once; FormSubmit emails taylorjbrewster@gmail.com a one-time confirmation link.
 4. **Custom domain (recommended)** — a domain like restaurantcostconsulting.com ranks better than github.io. Add it in Settings → Pages, create a `CNAME` file, and tell me — I'll update the canonical URLs and sitemap.
 5. **Backlinks** — directory listings + partner-company links; low-competition niche, a few links go far.
 
