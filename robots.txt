@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taylorjbrewster-ai.github.io/RCC/sitemap.xml
