@@ -1,44 +1,38 @@
-# Deploy to GitHub Pages — repo: taylorjbrewster-ai/RCC
+# Deploy — mylocalsoftware.com
 
-URLs are already set to `https://taylorjbrewster-ai.github.io/RCC/` in every file. Just push:
+All canonical URLs, schema, sitemap, and robots.txt point to `https://mylocalsoftware.com/`. A `CNAME` file is included for GitHub Pages custom-domain hosting.
 
-## 1. Push
+## Push changes
 
 ```bash
 cd "/Users/taylor/Claude/Projects/RESATRAUNT COST CONSULTANT/restaurant-cost-consulting"
-git init
 git add .
-git commit -m "Restaurant Cost Consulting site"
-git branch -M main
-git remote add origin https://github.com/taylorjbrewster-ai/RCC.git
-git push -u origin main
+git commit -m "Update site"
+git push
 ```
 
-(If the repo was created with a README, use `git push -u origin main --force` instead of the last line.)
+## Domain setup (one-time)
 
-## 2. Enable GitHub Pages
+**If hosting on GitHub Pages:** repo → Settings → Pages → Custom domain → `mylocalsoftware.com` → Save, and check "Enforce HTTPS". At your DNS provider, point the apex A records to GitHub Pages (185.199.108.153 / .109. / .110. / .111.) or follow the instructions GitHub shows.
 
-github.com/taylorjbrewster-ai/RCC → Settings → Pages → Source: "Deploy from a branch" → Branch: `main` / `/ (root)` → Save.
+**If hosting on Vercel:** Project → Settings → Domains → add `mylocalsoftware.com` and follow the DNS instructions. The CNAME file is ignored by Vercel (harmless).
 
-Live in ~1 minute at: **https://taylorjbrewster-ai.github.io/RCC/**
+## After it's live (SEO checklist)
 
-## 3. After it's live (SEO checklist)
-
-1. **Google Search Console** — add `https://taylorjbrewster-ai.github.io/RCC/` as a URL-prefix property, verify, submit `sitemap.xml`.
+1. **Google Search Console** — add `mylocalsoftware.com` as a Domain property, verify via DNS, submit `https://mylocalsoftware.com/sitemap.xml`.
 2. **Bing Webmaster Tools** — import from Search Console in one click.
 3. **Activate the contact form** — submit it once; FormSubmit emails taylorjbrewster@gmail.com a one-time confirmation link.
-4. **Custom domain (recommended)** — a domain like restaurantcostconsulting.com ranks better than github.io. Add it in Settings → Pages, create a `CNAME` file, and tell me — I'll update the canonical URLs and sitemap.
-5. **Backlinks** — directory listings + partner-company links; low-competition niche, a few links go far.
+4. **Backlinks** — directory listings + partner-company links (Town, processors, energy brokers); low-competition niche, a few links go far.
 
-## On-page SEO already done
+## Site structure (clean URLs)
 
-Unique titles/descriptions per page, single H1s, canonicals, Open Graph/Twitter cards, JSON-LD (ProfessionalService, Service, FAQPage, BreadcrumbList), sitemap.xml, robots.txt, custom 404, internal linking, zero JS, mobile responsive.
+| URL | Primary keyword |
+|---|---|
+| / | restaurant cost consultant |
+| /online-ordering-commissions/ | reduce third-party delivery commissions (→ 0% with Town) |
+| /payment-processing/ | lower restaurant credit card processing fees (→ 0% dual pricing) |
+| /utilities/ | reduce restaurant utility costs |
+| /restaurant-operating-costs/ | restaurant operating costs breakdown |
+| /savings-calculator/ | restaurant savings calculator |
 
-## Keyword targets per page
-
-| Page | Primary keyword | Supporting |
-|---|---|---|
-| Home | restaurant cost consultant | restaurant cost reduction consulting |
-| Online ordering | reduce third-party delivery commissions | DoorDash/Uber Eats fees, commission-free online ordering |
-| Payment processing | lower restaurant credit card processing fees | interchange-plus, merchant statement audit |
-| Utilities | reduce restaurant utility costs | restaurant energy bill, restaurant electricity costs |
+Old `.html` URLs redirect to the clean equivalents (noindex stubs). `flyer.html` is the printable handout with a built-in Download PDF button.
