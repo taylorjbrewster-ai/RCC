@@ -41,6 +41,7 @@
 <header>
   <div class="nav-wrap">
     <a class="logo" href="index.html">Restaurant<span>Cost</span>Consulting</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" onclick="document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',document.body.classList.contains('nav-open'))">&#9776;</button>
     <nav>
       <a href="online-ordering-commissions.html">Delivery</a>
       <a href="payment-processing.html">Processing</a>
@@ -55,6 +56,7 @@
 
 <article class="page" style="max-width:860px">
   <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; Savings Calculator</nav>
+  <div class="page-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="12" x2="8" y2="12.01"/><line x1="12" y1="12" x2="12" y2="12.01"/><line x1="16" y1="12" x2="16" y2="12.01"/><line x1="8" y1="17" x2="8" y2="17.01"/><line x1="12" y1="17" x2="12" y2="17.01"/><line x1="16" y1="17" x2="16" y2="17.01"/></svg></div>
   <h1>Restaurant Savings Calculator</h1>
   <p class="lede">Enter your real numbers and see what you're leaving on the table every year. Industry benchmarks are pre-filled &mdash; adjust them to match your statements. Everything runs in your browser; nothing is stored or sent anywhere.</p>
 
@@ -74,12 +76,12 @@
         <input type="range" id="d-shift" value="40" min="0" max="80" step="5">
       </div>
       <div>
-        <label for="d-direct">Direct ordering cost (% of those sales)</label>
-        <input type="number" id="d-direct" value="5" min="0" max="20" step="0.5">
+        <label for="d-direct">Direct ordering commission (0% with partners like Town)</label>
+        <input type="number" id="d-direct" value="0" min="0" max="20" step="0.5">
       </div>
     </div>
     <div class="result"><span class="label">Annual delivery savings</span><span class="num" id="d-out">$0</span></div>
-    <p class="note">Marketplaces commonly cost 30&ndash;40% all-in after fees and promos. Repeat customers shifted to direct ordering typically cost a flat 0&ndash;8%. <a href="online-ordering-commissions.html">How we do it &rarr;</a></p>
+    <p class="note">Marketplaces commonly cost 30&ndash;40% all-in after fees and promos. Direct ordering through partners like <a href="https://www.town.club" rel="noopener">Town</a> runs at 0% commission. <a href="online-ordering-commissions.html">How we do it &rarr;</a></p>
   </section>
 
   <section class="tool" id="processing">
@@ -99,7 +101,7 @@
       </div>
     </div>
     <div class="result"><span class="label">Annual processing savings</span><span class="num" id="p-out">$0</span></div>
-    <p class="note">Find your effective rate: total fees on your merchant statement &divide; total card volume. Small businesses average 2.2&ndash;3.5%+. <a href="payment-processing.html">How we lower it &rarr;</a></p>
+    <p class="note">Find your effective rate: total fees on your merchant statement &divide; total card volume. Small businesses average 2.2&ndash;3.5%+. Set the target to 0 to model a compliant dual-pricing program. <a href="payment-processing.html">How we lower it &rarr;</a></p>
   </section>
 
   <section class="tool" id="utility">

@@ -39,6 +39,7 @@
 <header>
   <div class="nav-wrap">
     <a class="logo" href="index.html">Restaurant<span>Cost</span>Consulting</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" onclick="document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',document.body.classList.contains('nav-open'))">&#9776;</button>
     <nav>
       <a href="online-ordering-commissions.html">Delivery</a>
       <a href="payment-processing.html">Processing</a>
@@ -53,6 +54,7 @@
 
 <article class="page">
   <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; Utilities</nav>
+  <div class="page-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
   <h1>Reduce Your Restaurant's Utility Costs</h1>
   <p class="lede">Restaurants are energy hogs by design: roughly 38 kWh of electricity and 111 cubic feet of natural gas per square foot per year &mdash; about 2.5x the consumption of other commercial buildings. A typical 4,000 sq ft restaurant spends around $15,000 a year on electricity and gas; high-volume operations exceed $25,000. Utilities are 3&ndash;5% of operating costs, and almost nobody manages them.</p>
 

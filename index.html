@@ -43,6 +43,7 @@
 <header>
   <div class="nav-wrap">
     <a class="logo" href="index.html">Restaurant<span>Cost</span>Consulting</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" onclick="document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',document.body.classList.contains('nav-open'))">&#9776;</button>
     <nav>
       <a href="online-ordering-commissions.html">Delivery</a>
       <a href="payment-processing.html">Processing</a>
@@ -62,6 +63,31 @@
     <p class="lede">We help independent restaurants and small groups cut their three biggest controllable expenses &mdash; third-party delivery commissions, credit card processing fees, and utility bills &mdash; by pairing you with vetted partner companies and renegotiating what you already pay.</p>
     <a class="btn" href="#contact">Get a Free Cost Audit</a>
     <a class="btn ghost" href="#services">See How It Works</a>
+    <svg class="hero-art" viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chart showing restaurant operating costs trending down over six months">
+      <defs>
+        <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0e7a5f" stop-opacity=".22"/>
+          <stop offset="100%" stop-color="#0e7a5f" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <rect x="1" y="1" width="558" height="248" rx="18" fill="#ffffff" stroke="#e6e2d8"/>
+      <text x="36" y="44" font-family="-apple-system,Segoe UI,Arial" font-size="15" font-weight="700" fill="#16202e">Your monthly operating costs</text>
+      <text x="36" y="64" font-family="-apple-system,Segoe UI,Arial" font-size="12" fill="#8a96a6">after a Restaurant Cost Consulting audit</text>
+      <g stroke="#eef0f3" stroke-width="1">
+        <line x1="36" y1="96" x2="524" y2="96"/><line x1="36" y1="136" x2="524" y2="136"/><line x1="36" y1="176" x2="524" y2="176"/><line x1="36" y1="216" x2="524" y2="216"/>
+      </g>
+      <path d="M36 104 L134 112 L232 132 L330 156 L428 176 L524 188 L524 216 L36 216 Z" fill="url(#fade)"/>
+      <polyline points="36,104 134,112 232,132 330,156 428,176 524,188" fill="none" stroke="#0e7a5f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <g fill="#ffffff" stroke="#0e7a5f" stroke-width="3">
+        <circle cx="134" cy="112" r="5"/><circle cx="232" cy="132" r="5"/><circle cx="330" cy="156" r="5"/><circle cx="428" cy="176" r="5"/>
+      </g>
+      <circle cx="524" cy="188" r="7" fill="#0e7a5f"/>
+      <rect x="404" y="118" width="120" height="30" rx="15" fill="#0e7a5f"/>
+      <text x="464" y="138" font-family="-apple-system,Segoe UI,Arial" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">&#8595; $48,200 / yr</text>
+      <g font-family="-apple-system,Segoe UI,Arial" font-size="11" fill="#8a96a6" text-anchor="middle">
+        <text x="36" y="238">Month 1</text><text x="232" y="238">Month 3</text><text x="428" y="238">Month 5</text>
+      </g>
+    </svg>
   </section>
 
   <div class="container">
@@ -78,24 +104,28 @@
     <div class="cards">
       <div class="card">
         <span class="tag">Service 01</span>
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
         <h3>Online Ordering Commission Reduction</h3>
-        <p>DoorDash, Uber Eats, and Grubhub take 15&ndash;30% of every order &mdash; often 30&ndash;40% all-in after fees and promos. We move your regulars to commission-free direct ordering and renegotiate the marketplace rates you keep.</p>
-        <a class="more" href="online-ordering-commissions.html">Cut delivery commissions &rarr;</a>
+        <p>DoorDash, Uber Eats, and Grubhub take 15&ndash;30% of every order &mdash; often 30&ndash;40% all-in after fees and promos. We move your regulars to <strong>zero-commission</strong> direct ordering with partners like Town, and renegotiate the marketplace rates you keep.</p>
+        <a class="more" href="online-ordering-commissions.html">Get commissions to 0% &rarr;</a>
       </div>
       <div class="card">
         <span class="tag">Service 02</span>
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
         <h3>Payment Processing Fee Reduction</h3>
-        <p>Restaurants routinely overpay on interchange, markups, and junk fees. We audit your statements line by line, then negotiate or switch you to transparent interchange-plus pricing through our processing partners.</p>
-        <a class="more" href="payment-processing.html">Lower processing fees &rarr;</a>
+        <p>Restaurants routinely overpay on interchange, markups, and junk fees. We audit your statements line by line, negotiate transparent interchange-plus pricing &mdash; or take the whole line item to <strong>0%</strong> with compliant dual-pricing programs.</p>
+        <a class="more" href="payment-processing.html">Get processing to 0% &rarr;</a>
       </div>
       <div class="card">
         <span class="tag">Service 03</span>
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <h3>Utility Cost Reduction</h3>
         <p>Restaurants use roughly 2.5x more energy per square foot than other commercial buildings. We benchmark your bills, source better supply rates where markets allow, and identify equipment fixes that cut usage 15&ndash;25%.</p>
         <a class="more" href="utilities.html">Reduce utility bills &rarr;</a>
       </div>
       <div class="card">
         <span class="tag">Service 04</span>
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
         <h3>Food &amp; Supplier Cost Reduction</h3>
         <p>Food runs 28&ndash;35% of sales &mdash; your biggest controllable cost. We bid out your top items, plug you into group purchasing, and audit invoices for price creep so a 2-point improvement drops straight to profit.</p>
         <a class="more" href="food-supplier-costs.html">Cut supplier costs &rarr;</a>
@@ -109,12 +139,14 @@
     <div class="cards">
       <div class="card">
         <span class="tag">Interactive Tool</span>
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="12" x2="8" y2="12.01"/><line x1="12" y1="12" x2="12" y2="12.01"/><line x1="16" y1="12" x2="16" y2="12.01"/><line x1="8" y1="17" x2="8" y2="17.01"/><line x1="12" y1="17" x2="12" y2="17.01"/><line x1="16" y1="17" x2="16" y2="17.01"/></svg></div>
         <h3>Restaurant Savings Calculator</h3>
         <p>Enter your delivery sales, card volume, and utility spend &mdash; get your annual savings potential and the sales equivalent at your margin, instantly.</p>
         <a class="more" href="savings-calculator.html">Calculate your savings &rarr;</a>
       </div>
       <div class="card">
         <span class="tag">Complete Guide</span>
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div>
         <h3>Restaurant Operating Costs Breakdown</h3>
         <p>Every cost category benchmarked &mdash; food, labor, occupancy, utilities, processing, delivery &mdash; with the playbook to cut each one. Know exactly where you stand.</p>
         <a class="more" href="restaurant-operating-costs.html">Read the cost guide &rarr;</a>

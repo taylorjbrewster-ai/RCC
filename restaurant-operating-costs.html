@@ -41,6 +41,7 @@
 <header>
   <div class="nav-wrap">
     <a class="logo" href="index.html">Restaurant<span>Cost</span>Consulting</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" onclick="document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',document.body.classList.contains('nav-open'))">&#9776;</button>
     <nav>
       <a href="online-ordering-commissions.html">Delivery</a>
       <a href="payment-processing.html">Processing</a>
@@ -55,12 +56,13 @@
 
 <article class="page">
   <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; Restaurant Operating Costs Guide</nav>
+  <div class="page-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div>
   <h1>Restaurant Operating Costs: The Complete Breakdown</h1>
   <p class="lede">The average restaurant keeps 3&ndash;6 cents of every dollar it sells. This guide breaks down where the other 94&ndash;97 cents go, what healthy benchmarks look like, and &mdash; line by line &mdash; what you can actually do about each one.</p>
 
   <h2>Benchmark every line of your P&amp;L</h2>
   <p>Percentages are of total sales. Ranges reflect typical full-service and quick-service operations; your concept will sit somewhere inside them.</p>
-  <table class="bench">
+  <div class="table-wrap"><table class="bench">
     <thead><tr><th>Cost category</th><th>Healthy benchmark</th><th>Controllable?</th></tr></thead>
     <tbody>
       <tr class="hl"><td><a href="food-supplier-costs.html">Food &amp; beverage (COGS)</a></td><td>28&ndash;35%</td><td>Highly</td></tr>
@@ -75,7 +77,7 @@
       <tr><td>Insurance, licenses, fees</td><td>2&ndash;4%</td><td>At renewal</td></tr>
       <tr><td><strong>Net profit margin</strong></td><td><strong>3&ndash;6%</strong></td><td>&mdash;</td></tr>
     </tbody>
-  </table>
+  </table></div>
   <div class="callout"><strong>Why the highlighted rows?</strong> Food, utilities, processing, and delivery commissions are the four costs you can cut <em>without touching staffing, your lease, or guest experience</em>. That's where we focus. Run your numbers in the <a href="savings-calculator.html">savings calculator</a>.</div>
 
   <h2>1. Food &amp; supplier costs (28&ndash;35% of sales)</h2>
@@ -91,10 +93,10 @@
   <p>Restaurants use ~2.5x the energy of other commercial buildings &mdash; about $15,000/year for a typical 4,000 sq ft operation. Levers: competitive supply procurement in deregulated states, rate-class fixes, billing-error recovery, LED retrofits (50&ndash;70% lighting savings), ENERGY STAR equipment (~30% savings), and demand management (15&ndash;25% off electric bills). <a href="utilities.html">Full utility playbook &rarr;</a></p>
 
   <h2>5. Payment processing (2.2&ndash;3.5%+ of card sales)</h2>
-  <p>Nearly invisible because it's deducted before deposits. Calculate your effective rate (total fees &divide; card volume), then attack the processor markup: interchange-plus pricing, junk-fee removal, and transaction qualification fixes. On $1M in card sales, every 0.25% saved is $2,500/year. <a href="payment-processing.html">Full processing playbook &rarr;</a></p>
+  <p>Nearly invisible because it's deducted before deposits. Calculate your effective rate (total fees &divide; card volume), then attack the processor markup: interchange-plus pricing, junk-fee removal, and transaction qualification fixes. On $1M in card sales, every 0.25% saved is $2,500/year &mdash; and compliant dual-pricing programs through our partner processors can take the line item to <strong>zero</strong> entirely. <a href="payment-processing.html">Full processing playbook &rarr;</a></p>
 
   <h2>6. Third-party delivery (15&ndash;30% commissions, 30&ndash;40% all-in)</h2>
-  <p>The fastest-growing cost line of the last five years. Treat marketplaces as advertising, not infrastructure: shift repeat customers to commission-free direct ordering, negotiate or re-tier marketplace plans, use pickup pricing, and track contribution margin by channel. <a href="online-ordering-commissions.html">Full delivery playbook &rarr;</a></p>
+  <p>The fastest-growing cost line of the last five years. Treat marketplaces as advertising, not infrastructure: shift repeat customers to <strong>zero-commission</strong> direct ordering on platforms like <a href="https://www.town.club" rel="noopener">Town</a>, negotiate or re-tier marketplace plans, use pickup pricing, and track contribution margin by channel. The endgame: your regulars order direct at 0% commission, and marketplaces only ever pay for new-customer discovery. <a href="online-ordering-commissions.html">Full delivery playbook &rarr;</a></p>
 
   <h2>The order of operations</h2>
   <ol>
