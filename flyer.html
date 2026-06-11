@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flyer — Restaurant Cost Consulting (print me: Cmd+P → Save as PDF)</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--ink:#16202e;--soft:#46566b;--accent:#0e7a5f;--accent-dark:#0a5c47;--gold:#c8861a;--line:#e6e2d8;--mint:#eef7f3}
+*{margin:0;padding:0;box-sizing:border-box}
+@page{size:letter;margin:0}
+html,body{background:#888}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.sheet{width:8.5in;height:11in;margin:24px auto;background:#fff;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+@media print{html,body{background:#fff}.sheet{margin:0;box-shadow:none}}
+/* Top band */
+.band{background:linear-gradient(145deg,#16202e 0%,#1d2c40 55%,#13351f 130%);color:#fff;padding:.55in .6in .5in;position:relative}
+.logo{font-weight:800;font-size:15px;letter-spacing:-.02em;color:#fff;margin-bottom:.32in}
+.logo b{color:#5fd4ae}
+.band h1{font-size:34px;line-height:1.12;letter-spacing:-.025em;max-width:6.2in}
+.band h1 em{font-style:normal;color:#5fd4ae}
+.band p{color:#c3ccd9;font-size:13.5px;margin-top:10px;max-width:5.9in;line-height:1.55}
+/* Stats strip */
+.strip{display:flex;border-bottom:3px solid var(--accent)}
+.strip div{flex:1;text-align:center;padding:14px 8px;border-right:1px solid var(--line)}
+.strip div:last-child{border-right:none}
+.strip .n{font-size:21px;font-weight:800;color:var(--accent);letter-spacing:-.02em}
+.strip .l{font-size:9.5px;color:var(--soft);text-transform:uppercase;letter-spacing:.07em;font-weight:700;margin-top:2px}
+/* Services */
+.main{flex:1;padding:.34in .6in 0;display:flex;flex-direction:column}
+.svc{display:grid;grid-template-columns:1fr;gap:.16in}
+.box{border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;display:flex;gap:11px;align-items:flex-start}
+.box .ic{flex:0 0 34px;height:34px;border-radius:9px;background:var(--mint);display:flex;align-items:center;justify-content:center}
+.box .ic svg{width:19px;height:19px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.box h3{font-size:12.5px;letter-spacing:-.01em;margin-bottom:2px}
+.box h3 span{color:var(--accent-dark)}
+.box p{font-size:10.5px;color:var(--soft);line-height:1.5}
+/* Example */
+.example{margin-top:.22in;background:var(--mint);border:1.5px solid #cde5db;border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:18px}
+.example .big{font-size:30px;font-weight:800;color:var(--accent-dark);letter-spacing:-.02em;white-space:nowrap}
+.example .big small{display:block;font-size:9.5px;font-weight:700;color:var(--soft);text-transform:uppercase;letter-spacing:.07em;margin-top:1px}
+.example p{font-size:10.8px;color:var(--soft);line-height:1.55}
+.example b{color:var(--ink)}
+/* How */
+.how{margin-top:.22in;display:flex;gap:.14in}
+.how div{flex:1;text-align:center;padding:11px 8px;border:1.5px solid var(--line);border-radius:12px}
+.how .num{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:50%;font-weight:800;font-size:12px;margin-bottom:6px}
+.how h4{font-size:11px;margin-bottom:2px}
+.how p{font-size:9.6px;color:var(--soft);line-height:1.45}
+/* Footer CTA */
+.cta{margin-top:auto;background:var(--ink);color:#fff;padding:.32in .6in;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.cta h2{font-size:17px;letter-spacing:-.015em}
+.cta p{color:#c3ccd9;font-size:11px;margin-top:3px}
+.cta .get{text-align:right}
+.cta .get .em{font-size:14.5px;font-weight:800;color:#5fd4ae;white-space:nowrap}
+.cta .get .url{font-size:10.5px;color:#c3ccd9;margin-top:3px}
+.free{display:inline-block;background:var(--gold);color:#fff;font-weight:800;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:8px}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="band">
+    <div class="logo">Restaurant<b>Cost</b>Consulting</div>
+    <h1>The cost of everything is going up.<br><em>We get yours to go down.</em></h1>
+    <p>We help independent restaurants cut their three biggest controllable expenses &mdash; delivery commissions, payment processing, and utilities &mdash; through audits, renegotiation, and vetted partner companies. You don't pay unless you save.</p>
+  </div>
+
+  <div class="strip">
+    <div><div class="n">0%</div><div class="l">direct ordering commission</div></div>
+    <div><div class="n">0%</div><div class="l">processing w/ dual pricing</div></div>
+    <div><div class="n">15&ndash;25%</div><div class="l">off utility bills</div></div>
+  </div>
+
+  <div class="main">
+    <div class="svc">
+      <div class="box">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <div><h3>Delivery Commissions <span>&rarr; 0%</span></h3>
+        <p>DoorDash &amp; Uber Eats take 15&ndash;30% per order &mdash; often 30&ndash;40% all-in. We move your regulars to zero-commission direct ordering with partners like Town, and renegotiate the marketplace plans you keep.</p></div>
+      </div>
+      <div class="box">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+        <div><h3>Payment Processing <span>&rarr; 0%</span></h3>
+        <p>Most restaurants pay 2.2&ndash;3.5%+ on every card swipe. We audit your statement line by line, kill junk fees, negotiate interchange-plus &mdash; or take it to zero with a compliant dual-pricing program.</p></div>
+      </div>
+      <div class="box">
+        <div class="ic"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div><h3>Utilities <span>&rarr; 15&ndash;25% less</span></h3>
+        <p>Restaurants use 2.5x the energy of other businesses &mdash; ~$15,000+/yr for a typical location. We source better supply rates, recover billing errors, and cut usage with proven equipment fixes.</p></div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="big">$30,500<small>typical annual savings*</small></div>
+      <p><b>Example: a $1.2M/yr restaurant.</b> Shift 40% of $15K/mo delivery sales to 0% direct ordering (<b>$20.2K</b>), cut processing from 3.1% to 2.4% on $80K/mo card volume (<b>$6.7K</b>), and trim a $1,500/mo utility bill 20% (<b>$3.6K</b>). *Your numbers will differ &mdash; that's what the free audit is for.</p>
+    </div>
+
+    <div class="how">
+      <div><span class="num">1</span><h4>Free audit</h4><p>Send one month of statements. We benchmark every line.</p></div>
+      <div><span class="num">2</span><h4>Savings plan</h4><p>What you pay, what you should pay, how to close the gap.</p></div>
+      <div><span class="num">3</span><h4>We implement</h4><p>Vetted partners, managed switch, nothing breaks.</p></div>
+      <div><span class="num">4</span><h4>You keep saving</h4><p>Quarterly re-checks so rates never creep back.</p></div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div>
+      <span class="free">Free Cost Audit &mdash; No Retainers</span>
+      <h2>Find out what you're overpaying. This week.</h2>
+      <p>If we don't find savings, you don't pay. Run your own numbers with our free online calculator.</p>
+    </div>
+    <div class="get">
+      <div class="em">taylorjbrewster@gmail.com</div>
+      <div class="url">taylorjbrewster-ai.github.io/RCC</div>
+      <div class="url">Savings calculator: /savings-calculator</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
