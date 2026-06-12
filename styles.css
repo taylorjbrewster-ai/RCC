@@ -25,7 +25,7 @@ nav a.cta:hover{background:var(--accent-dark);color:#fff}
 .menu-btn:active{background:var(--accent-soft)}
 
 /* ===== Hero ===== */
-.hero{padding:64px 0 48px;text-align:left}
+.hero{padding-top:64px;padding-bottom:48px;text-align:left}
 .eyebrow{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);margin-bottom:18px;border-bottom:2px solid var(--rust);padding-bottom:6px}
 h1{font-size:clamp(2.1rem,5.6vw,3.6rem);line-height:1.08;letter-spacing:-.01em;max-width:820px;margin:0 0 20px}
 .hero p.lede{font-size:clamp(1.02rem,2.4vw,1.2rem);color:var(--ink-soft);max-width:640px;margin:0 0 30px}
@@ -45,7 +45,7 @@ h1{font-size:clamp(2.1rem,5.6vw,3.6rem);line-height:1.08;letter-spacing:-.01em;m
 .stat small{color:var(--ink-soft);font-size:.8rem;display:block;margin-top:4px;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
 
 /* ===== Sections & cards ===== */
-.section{padding:54px 0}
+.section{padding-top:54px;padding-bottom:54px}
 .section h2{font-size:clamp(1.5rem,3.4vw,2rem);letter-spacing:-.01em;margin-bottom:10px}
 .section .sub{color:var(--ink-soft);max-width:620px;margin-bottom:34px}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
@@ -154,7 +154,7 @@ footer a:hover{color:var(--accent);text-decoration:underline;text-underline-offs
   body{font-size:16px}
   .container{padding-left:20px;padding-right:20px}
   .nav-wrap{padding:10px 16px}
-  .hero{padding:40px 0 34px}
+  .hero{padding-top:40px;padding-bottom:34px}
   .hero p.lede{margin-bottom:24px}
   .hero-art{margin-top:30px}
   .btn{display:block;width:100%;text-align:center}
@@ -165,7 +165,7 @@ footer a:hover{color:var(--accent);text-decoration:underline;text-underline-offs
   .stat:nth-child(2){border-right:none}
   .stat-num{font-size:1.7rem}
   .stat small{font-size:.7rem}
-  .section{padding:38px 0}
+  .section{padding-top:38px;padding-bottom:38px}
   .cards{gap:12px}
   .card{padding:20px}
   .steps{grid-template-columns:1fr 1fr;gap:0}
