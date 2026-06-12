@@ -43,7 +43,7 @@
   <div class="nav-wrap">
     <a class="logo" href="../">Restaurant<span>Cost</span>Consulting</a>
     <button class="menu-btn" aria-label="Open menu" aria-expanded="false" onclick="document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',document.body.classList.contains('nav-open'))">&#9776;</button>
-    <nav>
+    <nav onclick="document.body.classList.remove('nav-open')">
       <a href="../online-ordering-commissions/">Delivery</a>
       <a href="../payment-processing/">Processing</a>
       <a href="../utilities/">Utilities</a>

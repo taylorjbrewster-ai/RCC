@@ -13,52 +13,56 @@ html,body{background:#888}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .sheet{width:8.5in;height:11in;margin:24px auto;background:#fff;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.35)}
 @media print{html,body{background:#fff}.sheet{margin:0;box-shadow:none}#dl{display:none!important}}
-/* Download button */
 #dl{position:fixed;top:18px;right:18px;z-index:99;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:13px 22px;font-size:14px;font-weight:800;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.35);display:flex;align-items:center;gap:8px}
 #dl:hover{background:var(--accent-dark)}
 #dl:disabled{opacity:.6;cursor:wait}
 /* Top band */
-.band{background:linear-gradient(145deg,#16202e 0%,#1d2c40 55%,#13351f 130%);color:#fff;padding:.52in .65in .46in}
-.logo{font-weight:800;font-size:16px;letter-spacing:-.02em;color:#fff;margin-bottom:.3in}
+.band{background:linear-gradient(145deg,#16202e 0%,#1d2c40 55%,#13351f 130%);color:#fff;padding:.4in .6in .34in}
+.logo{font-weight:800;font-size:15px;letter-spacing:-.02em;color:#fff;margin-bottom:.22in}
 .logo b{color:#5fd4ae}
-.band h1{font-size:36px;line-height:1.12;letter-spacing:-.025em;max-width:6.6in;font-weight:800}
+.band h1{font-size:29px;line-height:1.14;letter-spacing:-.02em;max-width:6.8in;font-weight:800}
 .band h1 em{font-style:normal;color:#5fd4ae}
-.band p{color:#c3ccd9;font-size:14px;margin-top:12px;max-width:6.4in;line-height:1.55}
+.band p{color:#c3ccd9;font-size:12.5px;margin-top:9px;max-width:6.6in;line-height:1.5}
 /* Stats strip */
 .strip{display:flex;border-bottom:3px solid var(--accent)}
-.strip div{flex:1;text-align:center;padding:16px 8px;border-right:1px solid var(--line)}
+.strip div{flex:1;text-align:center;padding:11px 8px;border-right:1px solid var(--line)}
 .strip div:last-child{border-right:none}
-.strip .n{font-size:26px;font-weight:800;color:var(--accent);letter-spacing:-.02em}
-.strip .l{font-size:10px;color:var(--soft);text-transform:uppercase;letter-spacing:.07em;font-weight:700;margin-top:3px}
+.strip .n{font-size:21px;font-weight:800;color:var(--accent);letter-spacing:-.02em}
+.strip .l{font-size:9px;color:var(--soft);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-top:2px}
 /* Body */
-.main{flex:1;padding:.32in .65in 0;display:flex;flex-direction:column}
-.svc{display:flex;flex-direction:column;gap:.14in}
-.box{border:1.5px solid var(--line);border-radius:13px;padding:15px 18px;display:flex;gap:14px;align-items:center}
-.box .ic{flex:0 0 44px;height:44px;border-radius:11px;background:var(--mint);display:flex;align-items:center;justify-content:center}
-.box .ic svg{width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.box h3{font-size:14.5px;letter-spacing:-.01em;margin-bottom:3px}
+.main{flex:1;padding:.22in .6in 0;display:flex;flex-direction:column}
+.svc{display:flex;flex-direction:column;gap:.11in}
+.box{border:1.5px solid var(--line);border-radius:12px;padding:11px 15px;display:flex;gap:12px;align-items:center}
+.box .ic{flex:0 0 38px;height:38px;border-radius:10px;background:var(--mint);display:flex;align-items:center;justify-content:center}
+.box .ic svg{width:21px;height:21px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.box h3{font-size:13px;letter-spacing:-.01em;margin-bottom:2px}
 .box h3 span{color:var(--accent-dark)}
-.box p{font-size:11.5px;color:var(--soft);line-height:1.55}
+.box p{font-size:10.6px;color:var(--soft);line-height:1.45}
 /* Example */
-.example{margin-top:.2in;background:var(--mint);border:1.5px solid #cde5db;border-radius:13px;padding:16px 20px;display:flex;align-items:center;gap:22px}
-.example .big{font-size:34px;font-weight:800;color:var(--accent-dark);letter-spacing:-.02em;white-space:nowrap}
-.example .big small{display:block;font-size:10px;font-weight:700;color:var(--soft);text-transform:uppercase;letter-spacing:.07em;margin-top:2px}
-.example p{font-size:11.5px;color:var(--soft);line-height:1.6}
+.example{margin-top:.14in;background:var(--mint);border:1.5px solid #cde5db;border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:18px}
+.example .big{font-size:29px;font-weight:800;color:var(--accent-dark);letter-spacing:-.02em;white-space:nowrap}
+.example .big small{display:block;font-size:9px;font-weight:700;color:var(--soft);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+.example p{font-size:10.4px;color:var(--soft);line-height:1.5}
 .example b{color:var(--ink)}
 /* How */
-.how{margin-top:.2in;display:flex;gap:.13in}
-.how div{flex:1;text-align:center;padding:13px 9px;border:1.5px solid var(--line);border-radius:13px}
-.how .num{display:inline-flex;width:26px;height:26px;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:50%;font-weight:800;font-size:13px;margin-bottom:7px}
-.how h4{font-size:12px;margin-bottom:3px}
-.how p{font-size:10.3px;color:var(--soft);line-height:1.5}
+.how{margin-top:.14in;display:flex;gap:.11in}
+.how div{flex:1;text-align:center;padding:10px 7px;border:1.5px solid var(--line);border-radius:12px}
+.how .num{display:inline-flex;width:22px;height:22px;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:50%;font-weight:800;font-size:11px;margin-bottom:5px}
+.how h4{font-size:11px;margin-bottom:2px}
+.how p{font-size:9.3px;color:var(--soft);line-height:1.4}
 /* Footer CTA */
-.cta{margin-top:auto;background:var(--ink);color:#fff;padding:.34in .65in;display:flex;justify-content:space-between;align-items:center;gap:24px}
-.cta h2{font-size:19px;letter-spacing:-.015em}
-.cta p{color:#c3ccd9;font-size:12px;margin-top:4px;max-width:4.4in}
+.cta{margin:auto .35in .35in;border-radius:16px;background:var(--ink);color:#fff;padding:.2in .32in;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.cta h2{font-size:15.5px;letter-spacing:-.01em}
+.cta p{color:#c3ccd9;font-size:10.5px;margin-top:3px;max-width:3in;line-height:1.45}
+.free{display:inline-block;background:var(--gold);color:#fff;font-weight:800;font-size:9px;letter-spacing:.07em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:6px}
 .cta .get{text-align:right;flex-shrink:0}
-.cta .get .em{font-size:15px;font-weight:800;color:#5fd4ae;white-space:nowrap}
-.cta .get .url{font-size:11px;color:#c3ccd9;margin-top:4px}
-.free{display:inline-block;background:var(--gold);color:#fff;font-weight:800;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:6px 13px;border-radius:999px;margin-bottom:9px}
+.cta .get .name{font-size:13px;font-weight:800;color:#fff;white-space:nowrap}
+.cta .get .em{font-size:12px;font-weight:800;color:#5fd4ae;white-space:nowrap;margin-top:2px}
+.cta .get .url{font-size:10px;color:#c3ccd9;margin-top:2px;white-space:nowrap}
+.qrwrap{flex-shrink:0;text-align:center}
+.qrbox{background:#fff;border-radius:10px;padding:6px;display:inline-block;line-height:0}
+.qrbox img,.qrbox canvas{display:block}
+.qrwrap .scan{display:block;font-size:8.5px;font-weight:700;color:#c3ccd9;text-transform:uppercase;letter-spacing:.07em;margin-top:5px}
 </style>
 </head>
 <body>
@@ -87,12 +91,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,san
       <div class="box">
         <div class="ic"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
         <div><h3>Payment Processing <span>&rarr; 0%</span></h3>
-        <p>Most restaurants pay 2.2&ndash;3.5%+ on every card swipe. We audit your statement line by line, kill junk fees, negotiate interchange-plus &mdash; or take it to zero with a compliant dual-pricing program.</p></div>
+        <p>Most restaurants pay 2.2&ndash;3.5%+ on every card swipe. We audit your statement, kill junk fees, negotiate interchange-plus &mdash; or take it to zero with a compliant dual-pricing program.</p></div>
       </div>
       <div class="box">
         <div class="ic"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <div><h3>Utilities <span>&rarr; 15&ndash;25% less</span></h3>
-        <p>Restaurants use 2.5x the energy of other businesses &mdash; $15,000+/yr for a typical location. We source better supply rates, recover billing errors, and cut usage with proven equipment fixes.</p></div>
+        <p>Restaurants use 2.5x the energy of other businesses &mdash; $15,000+/yr for a typical location. We source better supply rates, recover billing errors, and cut usage with proven fixes.</p></div>
       </div>
     </div>
 
@@ -116,9 +120,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,san
       <p>If we don't find savings, you don't pay. Run your own numbers with our free online savings calculator.</p>
     </div>
     <div class="get">
+      <div class="name">Taylor Brewster</div>
+      <div class="em">+1 (512) 831-7315</div>
       <div class="em">taylorjbrewster@gmail.com</div>
       <div class="url">mylocalsoftware.com</div>
-      <div class="url">Calculator: /savings-calculator</div>
+    </div>
+    <div class="qrwrap">
+      <span class="qrbox"><span id="qr"></span></span>
+      <span class="scan">Scan for free audit</span>
     </div>
   </div>
 
@@ -126,6 +135,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,san
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+new QRCode(document.getElementById('qr'),{text:'https://mylocalsoftware.com/',width:76,height:76,colorDark:'#16202e',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});
+</script>
 <script>
 async function downloadPDF(){
   var btn=document.getElementById('dl');
