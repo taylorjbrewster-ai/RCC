@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Restaurant Cost Audit | 2-Minute Savings Assessment</title>
+<meta name="description" content="Answer 6 quick questions about your restaurant and get an instant top-down breakdown of where you're overpaying — delivery commissions, card processing, and utilities — plus your estimated annual savings.">
+<link rel="canonical" href="https://mylocalsoftware.com/free-audit/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free 2-Minute Restaurant Cost Audit">
+<meta property="og:description" content="Six questions. Instant breakdown of where your restaurant is overpaying and what you could save.">
+<meta property="og:url" content="https://mylocalsoftware.com/free-audit/">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Free Restaurant Cost Audit",
+  "url": "https://mylocalsoftware.com/free-audit/",
+  "description": "Interactive assessment that estimates a restaurant's annual savings on delivery commissions, payment processing, and utilities.",
+  "provider": {"@type": "ProfessionalService", "name": "Restaurant Cost Consulting", "url": "https://mylocalsoftware.com/"}
+}
+</script>
+<style>
+.funnel{max-width:620px;margin:0 auto;padding:36px 20px 64px}
+.progress{height:5px;background:var(--line);margin-bottom:30px}
+.progress span{display:block;height:100%;background:var(--accent);width:0%;transition:width .3s}
+.fstep{display:none}
+.fstep.active{display:block}
+.fstep .qnum{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);margin-bottom:10px}
+.fstep h2{font-size:clamp(1.4rem,4vw,1.9rem);margin-bottom:8px}
+.fstep .why{color:var(--ink-soft);font-size:.95rem;margin-bottom:22px}
+.fstep label{display:block;font-size:.8rem;font-weight:700;margin:16px 0 5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em}
+.fstep input[type=text],.fstep input[type=email],.fstep input[type=tel],.fstep input[type=number],.fstep select{width:100%;padding:14px;border:1px solid var(--ink);background:#fff;color:var(--ink);font-size:1.05rem;font-family:inherit;min-height:50px;border-radius:0}
+.fstep input:focus,.fstep select:focus{outline:3px solid var(--accent)}
+.fstep input[type=range]{width:100%;accent-color:var(--accent);height:44px}
+.rangerow{display:flex;justify-content:space-between;align-items:baseline}
+.rangerow .val{font-family:Georgia,serif;font-size:1.5rem;font-weight:700;color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.chips label{display:flex;align-items:center;gap:8px;border:1px solid var(--ink);padding:11px 14px;cursor:pointer;font-size:.92rem;text-transform:none;letter-spacing:0;color:var(--ink);font-weight:600;margin:0;min-height:46px}
+.chips input{accent-color:var(--accent);width:18px;height:18px}
+.chips label:has(input:checked){background:var(--accent-soft);border-color:var(--accent)}
+.fnav{display:flex;gap:12px;margin-top:28px}
+.fnav .btn{flex:1;text-align:center}
+.fnav .back{flex:0 0 auto;background:transparent;color:var(--ink);border:2px solid var(--line);padding:15px 18px}
+.fnav .back:hover{border-color:var(--ink);background:transparent;color:var(--ink)}
+.ferr{color:#a02408;font-size:.9rem;margin-top:10px;font-weight:600;display:none}
+.skipnote{font-size:.85rem;color:var(--ink-soft);margin-top:10px}
+/* Report */
+#report{display:none}
+.r-total{background:var(--accent-dark);color:#fff;padding:30px 24px;text-align:center;margin:20px 0 26px}
+.r-total .label{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:#cfdcd2;font-weight:700}
+.r-total .big{font-family:Georgia,serif;font-size:3rem;font-weight:700;color:#9fdcbf;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.r-total .sub{color:#cfdcd2;font-size:.9rem;margin-top:6px}
+.r-line{border:1px solid var(--line);background:var(--card);padding:18px 20px;margin-bottom:14px}
+.r-line .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.r-line h3{font-size:1.05rem;font-family:-apple-system,sans-serif}
+.r-line .amt{font-family:Georgia,serif;font-size:1.4rem;font-weight:700;color:var(--accent-dark);font-variant-numeric:tabular-nums;white-space:nowrap}
+.r-line .bar{height:8px;background:var(--accent-soft);margin:10px 0 8px}
+.r-line .bar span{display:block;height:100%;background:var(--accent)}
+.r-line p{font-size:.9rem;color:var(--ink-soft)}
+.r-flag{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border:1px solid}
+.r-flag.hot{color:#a02408;border-color:#a02408}
+.r-flag.ok{color:var(--accent-dark);border-color:var(--accent-dark)}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-wrap">
+    <a class="logo" href="../">Restaurant<span>Cost</span>Consulting</a>
+    <span style="font-size:.82rem;color:var(--ink-soft);font-weight:600">Free audit &middot; takes 2 minutes</span>
+  </div>
+</header>
+
+<main class="funnel">
+  <div class="progress" aria-hidden="true"><span id="pbar"></span></div>
+
+  <!-- STEP 1 -->
+  <section class="fstep active" data-step="1">
+    <div class="qnum">Question 1 of 6</div>
+    <h2>Tell us about your restaurant.</h2>
+    <p class="why">So we can benchmark you against operations like yours.</p>
+    <label for="f-name">Restaurant name</label>
+    <input type="text" id="f-name" autocomplete="organization" placeholder="e.g. Maria's Trattoria">
+    <label for="f-concept">Concept</label>
+    <select id="f-concept">
+      <option>Full-service restaurant</option>
+      <option>Fast casual / QSR</option>
+      <option>Cafe / bakery</option>
+      <option>Bar / brewery with food</option>
+      <option>Food truck</option>
+      <option>Other</option>
+    </select>
+    <p class="ferr" id="err-1">Please enter your restaurant's name.</p>
+    <div class="fnav"><a class="btn" href="#" onclick="return next(1)">Continue &rarr;</a></div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="fstep" data-step="2">
+    <div class="qnum">Question 2 of 6</div>
+    <h2>How big is the business?</h2>
+    <p class="why">Revenue sets the scale of every savings number we calculate.</p>
+    <label for="f-revenue">Average monthly revenue ($)</label>
+    <input type="number" id="f-revenue" inputmode="numeric" min="0" step="1000" placeholder="e.g. 100000">
+    <label for="f-sqft">Square footage (optional)</label>
+    <input type="number" id="f-sqft" inputmode="numeric" min="0" step="100" placeholder="e.g. 4000">
+    <p class="ferr" id="err-2">Please enter your approximate monthly revenue.</p>
+    <div class="fnav"><a class="btn back" href="#" onclick="return back(2)">&larr;</a><a class="btn" href="#" onclick="return next(2)">Continue &rarr;</a></div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="fstep" data-step="3">
+    <div class="qnum">Question 3 of 6</div>
+    <h2>Online ordering &amp; delivery.</h2>
+    <p class="why">Marketplace commissions are usually the single biggest leak.</p>
+    <label>Which platforms do you use?</label>
+    <div class="chips">
+      <label><input type="checkbox" name="platform" value="DoorDash">DoorDash</label>
+      <label><input type="checkbox" name="platform" value="Uber Eats">Uber Eats</label>
+      <label><input type="checkbox" name="platform" value="Grubhub">Grubhub</label>
+      <label><input type="checkbox" name="platform" value="Own website ordering">Own website</label>
+      <label><input type="checkbox" name="platform" value="None">None</label>
+    </div>
+    <label for="f-delsales">Monthly third-party delivery sales ($)</label>
+    <input type="number" id="f-delsales" inputmode="numeric" min="0" step="500" placeholder="0 if none">
+    <div class="rangerow"><label for="f-delrate">Estimated all-in commission rate</label><span class="val" id="delrate-val">28%</span></div>
+    <input type="range" id="f-delrate" min="10" max="40" value="28" step="1" oninput="document.getElementById('delrate-val').textContent=this.value+'%'">
+    <p class="skipnote">Not sure? Leave it — 28% is the typical all-in rate.</p>
+    <div class="fnav"><a class="btn back" href="#" onclick="return back(3)">&larr;</a><a class="btn" href="#" onclick="return next(3)">Continue &rarr;</a></div>
+  </section>
+
+  <!-- STEP 4 -->
+  <section class="fstep" data-step="4">
+    <div class="qnum">Question 4 of 6</div>
+    <h2>Card processing.</h2>
+    <p class="why">Most owners can't see what they really pay — that's by design.</p>
+    <label for="f-cardvol">Monthly card sales volume ($)</label>
+    <input type="number" id="f-cardvol" inputmode="numeric" min="0" step="1000" placeholder="Usually 80–90% of revenue">
+    <div class="rangerow"><label for="f-procrate">Effective processing rate</label><span class="val" id="procrate-val">3.0%</span></div>
+    <input type="range" id="f-procrate" min="1.8" max="4.5" value="3.0" step="0.1" oninput="document.getElementById('procrate-val').textContent=(+this.value).toFixed(1)+'%'">
+    <p class="skipnote">Don't know it? Leave the default — flat-rate plans typically land near 3%.</p>
+    <div class="fnav"><a class="btn back" href="#" onclick="return back(4)">&larr;</a><a class="btn" href="#" onclick="return next(4)">Continue &rarr;</a></div>
+  </section>
+
+  <!-- STEP 5 -->
+  <section class="fstep" data-step="5">
+    <div class="qnum">Question 5 of 6</div>
+    <h2>Utilities.</h2>
+    <p class="why">Restaurants use ~2.5x the energy of other commercial buildings.</p>
+    <label for="f-utility">Monthly electric + gas spend ($)</label>
+    <input type="number" id="f-utility" inputmode="numeric" min="0" step="100" placeholder="e.g. 1500">
+    <p class="skipnote">A rough average is fine — grab last month's bills if handy.</p>
+    <div class="fnav"><a class="btn back" href="#" onclick="return back(5)">&larr;</a><a class="btn" href="#" onclick="return next(5)">Continue &rarr;</a></div>
+  </section>
+
+  <!-- STEP 6 -->
+  <section class="fstep" data-step="6">
+    <div class="qnum">Question 6 of 6</div>
+    <h2>Where should we send your audit?</h2>
+    <p class="why">You'll see your savings breakdown instantly. We'll follow up with the detailed plan.</p>
+    <label for="f-person">Your name</label>
+    <input type="text" id="f-person" autocomplete="name">
+    <label for="f-email">Email</label>
+    <input type="email" id="f-email" autocomplete="email">
+    <label for="f-phone">Phone (optional)</label>
+    <input type="tel" id="f-phone" autocomplete="tel">
+    <p class="ferr" id="err-6">Please enter your name and a valid email.</p>
+    <div class="fnav"><a class="btn back" href="#" onclick="return back(6)">&larr;</a><a class="btn" id="submitbtn" href="#" onclick="return finish()">See My Savings &rarr;</a></div>
+  </section>
+
+  <!-- REPORT -->
+  <section id="report">
+    <div class="qnum" style="font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--rust)">Your top-down cost audit</div>
+    <h2 id="r-title" style="font-size:clamp(1.4rem,4vw,1.9rem);margin:8px 0 4px">Here's where the money is leaking.</h2>
+    <p style="color:var(--ink-soft);font-size:.95rem" id="r-sub"></p>
+    <div class="r-total">
+      <div class="label">Estimated annual savings</div>
+      <div class="big" id="r-total">$0</div>
+      <div class="sub" id="r-equiv"></div>
+    </div>
+    <div id="r-lines"></div>
+    <div class="callout" style="margin-top:24px"><strong>What happens next:</strong> this summary just landed in our inbox. Taylor will review your numbers against real statements and reply within one business day with the verified plan — no retainers, no obligation. Want to talk sooner? Call <a href="tel:+15128317315">+1 (512) 831-7315</a>.</div>
+    <p style="margin-top:18px;font-size:.85rem;color:var(--ink-soft)">Estimates use industry benchmarks (15&ndash;30% marketplace commissions, 2.2&ndash;3.5% processing costs, 15&ndash;25% utility reductions) applied to the numbers you entered. The free audit verifies them against your actual statements.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="foot">
+    <div>&copy; 2026 Restaurant Cost Consulting. All rights reserved.</div>
+    <div><a href="../">Home</a><a href="../savings-calculator/">Calculator</a><a href="mailto:taylorjbrewster@gmail.com">Contact</a></div>
+  </div>
+</footer>
+
+<script>
+var cur=1,TOTAL=6;
+function show(n){
+  document.querySelectorAll('.fstep').forEach(function(s){s.classList.toggle('active',+s.dataset.step===n)});
+  document.getElementById('pbar').style.width=((n-1)/TOTAL*100)+'%';
+  window.scrollTo({top:0});
+  cur=n;
+}
+function next(n){
+  var err=document.getElementById('err-'+n);
+  if(err)err.style.display='none';
+  if(n===1 && !document.getElementById('f-name').value.trim()){err.style.display='block';return false}
+  if(n===2 && !(+document.getElementById('f-revenue').value>0)){err.style.display='block';return false}
+  show(n+1);return false;
+}
+function back(n){show(n-1);return false}
+var fmt=function(x){return '$'+Math.max(0,Math.round(x)).toLocaleString('en-US')};
+function calc(){
+  var rev=+document.getElementById('f-revenue').value||0;
+  var sqft=+document.getElementById('f-sqft').value||0;
+  var dSales=+document.getElementById('f-delsales').value||0;
+  var dRate=+document.getElementById('f-delrate').value/100;
+  var cVol=+document.getElementById('f-cardvol').value|| (rev*0.85);
+  var pRate=+document.getElementById('f-procrate').value/100;
+  var uBill=+document.getElementById('f-utility').value||0;
+  var dSave=dSales*0.4*dRate*12;                 // shift 40% of 3P orders to 0% direct
+  var pSave=cVol*Math.max(0,pRate-0.024)*12;     // to 2.4% interchange-plus benchmark
+  var uSave=uBill*0.20*12;                       // 20% reduction benchmark
+  var total=dSave+pSave+uSave;
+  return {rev:rev,sqft:sqft,dSales:dSales,dRate:dRate,cVol:cVol,pRate:pRate,uBill:uBill,dSave:dSave,pSave:pSave,uSave:uSave,total:total};
+}
+function buildReport(c){
+  document.getElementById('r-title').textContent='Here’s where '+(document.getElementById('f-name').value.trim()||'your restaurant')+' is leaking money.';
+  document.getElementById('r-sub').textContent='Based on '+fmt(c.rev)+'/mo revenue · '+document.getElementById('f-concept').value;
+  document.getElementById('r-total').textContent=fmt(c.total);
+  var margin=0.05;
+  document.getElementById('r-equiv').textContent='That’s the profit on roughly '+fmt(c.total/margin)+' in sales at a 5% margin.';
+  var max=Math.max(c.dSave,c.pSave,c.uSave,1);
+  var lines='';
+  function line(title,amt,flag,flagCls,desc){
+    lines+='<div class="r-line"><div class="top"><h3>'+title+' <span class="r-flag '+flagCls+'">'+flag+'</span></h3><span class="amt">'+fmt(amt)+'/yr</span></div><div class="bar"><span style="width:'+Math.max(4,amt/max*100)+'%"></span></div><p>'+desc+'</p></div>';
+  }
+  if(c.dSales>0){
+    line('Delivery commissions',c.dSave,(c.dRate>=0.25?'High priority':'Opportunity'),(c.dRate>=0.25?'hot':'ok'),
+    'You’re paying ~'+Math.round(c.dRate*100)+'% all-in on '+fmt(c.dSales)+'/mo. Shifting just 40% of those orders to zero-commission direct ordering (partners like Town) recovers this — every year.');
+  }else{
+    line('Delivery commissions',0,'Clean','ok','No third-party delivery sales reported — nothing leaking here. If you add delivery later, start commission-free from day one.');
+  }
+  var pFlag=c.pRate>=0.03?'High priority':(c.pSave>500?'Opportunity':'Near benchmark');
+  line('Card processing',c.pSave,pFlag,(c.pRate>=0.03?'hot':'ok'),
+  'At '+(c.pRate*100).toFixed(1)+'% effective rate on ~'+fmt(c.cVol)+'/mo in card sales. Interchange-plus pricing typically lands near 2.4% — and compliant dual pricing can take it to 0%.');
+  var uDesc='Cutting a '+fmt(c.uBill)+'/mo utility spend 20% via supply rates, billing-error recovery, and demand management.';
+  if(c.sqft>0){
+    var perSq=(c.uBill*12)/c.sqft;
+    uDesc+=' You’re at $'+perSq.toFixed(2)+'/sq ft annually vs the ~$3.75 benchmark'+(perSq>3.75?' — above it, which usually means recoverable waste.':' — close to benchmark, but supply-rate savings still apply.');
+  }
+  line('Utilities',c.uSave,(c.uSave>2000?'High priority':'Opportunity'),(c.uSave>2000?'hot':'ok'),uDesc);
+  document.getElementById('r-lines').innerHTML=lines;
+}
+function finish(){
+  var err=document.getElementById('err-6');err.style.display='none';
+  var person=document.getElementById('f-person').value.trim();
+  var email=document.getElementById('f-email').value.trim();
+  if(!person||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){err.style.display='block';return false}
+  var btn=document.getElementById('submitbtn');btn.textContent='Crunching…';
+  var c=calc();
+  var platforms=Array.from(document.querySelectorAll('input[name=platform]:checked')).map(function(x){return x.value}).join(', ')||'None selected';
+  var payload={
+    _subject:'AUDIT FUNNEL LEAD: '+document.getElementById('f-name').value.trim(),
+    restaurant:document.getElementById('f-name').value.trim(),
+    concept:document.getElementById('f-concept').value,
+    monthly_revenue:c.rev, square_feet:c.sqft||'not provided',
+    delivery_platforms:platforms, monthly_3p_delivery_sales:c.dSales, est_commission_rate:(c.dRate*100)+'%',
+    monthly_card_volume:c.cVol, effective_processing_rate:(c.pRate*100).toFixed(1)+'%',
+    monthly_utility_spend:c.uBill,
+    EST_DELIVERY_SAVINGS:fmt(c.dSave)+'/yr', EST_PROCESSING_SAVINGS:fmt(c.pSave)+'/yr',
+    EST_UTILITY_SAVINGS:fmt(c.uSave)+'/yr', EST_TOTAL_SAVINGS:fmt(c.total)+'/yr',
+    contact_name:person, contact_email:email, contact_phone:document.getElementById('f-phone').value.trim()||'not provided'
+  };
+  fetch('https://formsubmit.co/ajax/taylorjbrewster@gmail.com',{
+    method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify(payload)
+  }).catch(function(){}); // show report regardless; lead loss is logged by formsubmit if reachable
+  buildReport(c);
+  document.querySelectorAll('.fstep').forEach(function(s){s.classList.remove('active')});
+  document.getElementById('pbar').style.width='100%';
+  document.getElementById('report').style.display='block';
+  window.scrollTo({top:0});
+  return false;
+}
+</script>
+</body>
+</html>
